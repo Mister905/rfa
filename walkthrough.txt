@@ -1,0 +1,120 @@
+* Initialize front end / back end directories
+
+npx create-react-app client
+
+mkdir api
+
+
+* Create and Activate Virtual Environment
+
+cd api
+
+python3 -m venv venv
+
+source venv/bin/activate
+
+
+* Deactivate Virtual Environment
+
+deactivate
+
+
+* Install python modules
+* If python-dotenv is installed, running the flask command will set environment variables defined in the files .env and .flaskenv
+
+~/rfa/api
+venv ❯ pip install flask python-dotenv 
+
+
+* Flask imports the application from the place indicated by the FLASK_APP environment variable. 
+To avoid having to manually set this variable every time, create a .flaskenv file, which Flask automatically 
+imports into the environment on startup if it finds the python-dotenv package installed.
+
+~/rfa/api
+venv ❯ touch .flaskenv
+
+FLASK_APP=run.py
+FLASK_ENV=development
+
+
+* Initialize Flask app
+
+~/rfa/api
+venv ❯ touch __init__.py
+
+
+* Initialize Flask routes
+
+~/rfa/api
+venv ❯ touch routes.py 
+
+
+* To complete the application, you need to have a Python script at the top-level that defines the Flask application instance. Let's call this script run.py, and define it as a single line that imports the application instance
+
+~/rfa/api
+venv ❯ touch run.py
+
+
+* At this point this basic Flask project is complete. To make sure that it is working well you can start it
+
+flask run
+
+
+* React Proxy Configuration
+
+* The React project can be configured to redirect any requests it receives on its port 3000 that it does not understand into another server. 
+* This is configured simply by adding a proxy key at the bottom package.json:
+
+/rfa/client/package.json
+
+"proxy": "http://localhost:5000"
+
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start_api": "cd ../api && venv/bin/flask run --no-debugger",
+},
+
+* Configure Project for Git
+
+* Remove .git folder from create-react-app
+
+~/rfa/client
+venv ❯ sudo rm -rf .git
+
+~/rfa/api
+venv ❯ touch .gitignore
+
+cd ..
+
+echo "# rfa" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Mister905/rfa.git
+git push -u origin main
+
+
+git status
+
+git add .
+
+
+* Running the Combined Project
+
+cd client
+
+* Start Front End
+
+yarn start
+
+* Start Back End
+
+yarn start_api
+
+
+
+
