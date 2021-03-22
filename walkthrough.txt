@@ -166,7 +166,7 @@ yarn install
 * Install Client packages
 
 ~/rfa/client
-venv ❯ yarn add axios react-router-dom redux react-redux redux-thunk formik dayjs node-sass materialize-css@next
+venv ❯ yarn add axios react-router-dom redux react-redux redux-thunk formik yup dayjs node-sass materialize-css@next
 
 * Configure Client Folder Structure
 
@@ -218,4 +218,10 @@ rafce tab
 
 * Enable Emmet support for JSX in Visual Studio Code | React
 
-https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c
+File -> Preferences -> Settings -> Extensions -> Emmet -> Edit in settings.json -> Include Languages
+
+{
+   "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+   }
+}

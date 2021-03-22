@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // COMPONENTS
 import Header from "./components/header/Header";
 import Test from "./components/test/Test";
+import Login from "./components/login/Login";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Test} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </BrowserRouter>
     </div>
