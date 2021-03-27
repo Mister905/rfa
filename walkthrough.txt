@@ -148,6 +148,31 @@ pip freeze > frozen-requirements.txt
 pip install -r frozen-requirements.txt
 
 
+List installed packages, including editables.
+
+python -m pip list
+
+"pip show flask" to check the installation location of the module "flask":
+
+pip show flask                                                                                                                                   ✹ ✭main 
+Name: Flask
+Version: 1.1.2
+Summary: A simple framework for building complex web applications.
+Home-page: https://palletsprojects.com/p/flask/
+Author: Armin Ronacher
+Author-email: armin.ronacher@active-4.com
+License: BSD-3-Clause
+Location: /home/james/rfa/api/venv/lib/python3.7/site-packages
+Requires: click, Jinja2, Werkzeug, itsdangerous
+Required-by: Flask-Cors
+
+
+Set Interpeter PAth in VS Code to venv
+https://code.visualstudio.com/docs/python/environments
+
+/home/james/rfa/api/venv/bin/python3
+
+
 * Cloning repo and initializing repo
 
 cd api
@@ -225,3 +250,6 @@ File -> Preferences -> Settings -> Extensions -> Emmet -> Edit in settings.json 
       "javascript": "javascriptreact"
    }
 }
+
+
+

@@ -4,7 +4,7 @@ import { compose } from "redux";
 import { withRouter } from "react-router-dom";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-// import { login_user } from "../../../actions/auth";
+import { login_user } from "../../actions/auth";
 
 class Login extends Component {
     render() {
@@ -97,9 +97,8 @@ const FormikForm = withFormik({
     validateOnBlur: false,
     validateOnChange: false,
     handleSubmit: (values, props) => {
-        console.log(values);
-        // props.props.login_user(values, props.props.history);
+        props.props.login_user(values, props.props.history);
     }
 })(Login);
 
-export default compose(connect(null, null), withRouter)(FormikForm);
+export default compose(connect(null, { login_user }), withRouter)(FormikForm);

@@ -9,11 +9,11 @@ class Header extends Component {
     render() {
         return (
             <nav>
-                <div class="nav-wrapper">
+                <div className="nav-wrapper">
                     <Link to={"/"} className="brand-logo">
                         Logo
                     </Link>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
                             <Link to={"/login"}>
                                 Login
