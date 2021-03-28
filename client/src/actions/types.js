@@ -1,2 +1,7 @@
-export const TIME_LOADED = "TIME_LOADED";
-export const LOGIN_USER = "LOGIN_USER";
+export const TIME_LOADED = "TIME_LOADED"; // Used by test reducer
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT = "LOGOUT";
+export const USER_LOADED = "USER_LOADED";
+export const AUTH_ERROR = "AUTH_ERROR";
+export const GET_PLANETS = "GET_PLANETS";

@@ -2,8 +2,9 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 // COMPONENTS
 import Header from "./components/header/Header";
-import Test from "./components/test/Test";
+import Planets from "./components/planets/Planets";
 import Login from "./components/login/Login";
+import Register from "./components/register/Register";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/" component={Test} />
+          <Route exact path="/" component={Planets} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -253,3 +253,51 @@ File -> Preferences -> Settings -> Extensions -> Emmet -> Edit in settings.json 
 
 
 
+Flask-SQLAlchemy, an extension that provides a Flask-friendly wrapper to the popular SQLAlchemypackage, which is an Object Relational Mapper or ORM. ORMs allow applications to manage a database using high-level entities such as classes, objects and methods instead of tables and SQL. The job of the ORM is to translate the high-level operations into database commands.
+
+venv ❯ pip install flask-sqlalchemy
+
+
+Flask-Migrate, which is actually one created by yours truly. This extension is a Flask wrapper for Alembic, a database migration framework for SQLAlchemy. Working with database migrations adds a bit of work to get a database started, but that is a small price to pay for a robust way to make changes to your database in the future.
+
+venv ❯ pip install flask-migrate
+
+
+SQLite databases are the most convenient choice for developing small applications, sometimes even not so small ones, as each database is stored in a single file on disk and there is no need to run a database server like MySQL and PostgreSQL.
+
+
+
+Flask Migrate Config
+
+https://courses.miguelgrinberg.com/courses/336779/lectures/5186943
+
+(venv) $ flask db init
+
+
+
+Flask migrations
+https://flask-migrate.readthedocs.io/en/latest/
+https://courses.miguelgrinberg.com/courses/336779/lectures/5186947
+
+flask db migrate -m "users table"
+
+flask db upgrade
+
+flask db downgrade
+
+"If you are storing your project in source control, also remember to add the new migration script to it."
+
+
+Flask Marsmallow
+venv ❯ pip install flask-marshmallow
+
+
+Flask JWT Extended
+venv ❯ pip install flask-jwt-extended  
+
+
+Seeding the DB
+
+flask db_create
+
+flask db_seed
