@@ -171,8 +171,8 @@ const FormikForm = withFormik({
     validateOnBlur: false,
     validateOnChange: false,
     handleSubmit: (values, props) => {
-        // props.props.login_user(values, props.props.history);
+        props.props.register_user(values, props.props.history);
     }
 })(Register);
 
-export default compose(connect(null, null), withRouter)(FormikForm);
+export default compose(connect(null, { register_user }), withRouter)(FormikForm);

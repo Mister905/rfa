@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { login_user } from "../../actions/auth";
@@ -74,6 +74,13 @@ class Login extends Component {
                         </div>
                     </div>
                 </Form>
+                <div className="row registration-row">
+                    <div className="col m12">
+                        <div className="center-align">New User? 
+                            <Link to={"/register"} className="register-today">Register Today</Link>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

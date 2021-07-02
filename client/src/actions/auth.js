@@ -37,8 +37,6 @@ export const register_user = (form_data, history) => async dispatch => {
 
     let request_body = JSON.stringify(form_data);
 
-    // console.log(request_body);
-
     try {
         const res = await axios.post("/api/auth/register", request_body, config);
         

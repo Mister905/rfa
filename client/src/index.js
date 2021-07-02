@@ -5,6 +5,7 @@ import "./index.scss";
 import App from "./App";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import redux_thunk from "redux-thunk";
 import reducers from "./reducers";
 
@@ -19,7 +20,9 @@ const store = createStore(reducers, enhancer);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

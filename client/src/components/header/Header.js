@@ -11,7 +11,7 @@ class Header extends Component {
             <nav>
                 <div className="nav-wrapper">
                     <Link to={"/"} className="brand-logo">
-                        Logo
+                        React Flask App
                     </Link>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li>
@@ -31,7 +31,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default compose(
-    connect(mapStateToProps, null),
-    withRouter
-)(Header);
+export default compose(connect(mapStateToProps, null), withRouter)(Header);

@@ -285,6 +285,8 @@ flask db downgrade
 Flask Marsmallow
 venv ❯ pip install flask-marshmallow
 
+marshmallow-sqlalchemy
+venv ❯ pip install marshmallow-sqlalchemy
 
 Flask JWT Extended
 venv ❯ pip install flask-jwt-extended  
