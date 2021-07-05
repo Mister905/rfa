@@ -3,6 +3,7 @@ from flask import request, jsonify
 from api.models import Planet
 from api.schemas import PlanetSchema
 from flask_jwt_extended import jwt_required
+from api import db
 
 planet_schema = PlanetSchema()
 planets_schema = PlanetSchema(many=True)

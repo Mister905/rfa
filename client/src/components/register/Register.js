@@ -24,7 +24,7 @@ class Register extends Component {
                                 className="active custom-label"
                             >
                                 First Name
-                                </label>
+                            </label>
                             <Field
                                 type="text"
                                 id="first_name"
@@ -47,7 +47,7 @@ class Register extends Component {
                                 className="active custom-label"
                             >
                                 Last Name
-                                </label>
+                            </label>
                             <Field
                                 type="text"
                                 id="last_name"
@@ -70,7 +70,7 @@ class Register extends Component {
                                 className="active custom-label"
                             >
                                 Email
-                                </label>
+                            </label>
                             <Field
                                 type="email"
                                 id="email"
@@ -93,7 +93,7 @@ class Register extends Component {
                                 className="active custom-label"
                             >
                                 Password
-                                </label>
+                            </label>
                             <Field
                                 type="password"
                                 id="password"
@@ -116,7 +116,7 @@ class Register extends Component {
                                 className="active custom-label"
                             >
                                 Confirm Password
-                                </label>
+                            </label>
                             <Field
                                 type="password"
                                 id="confirm_password"
@@ -166,7 +166,9 @@ const FormikForm = withFormik({
         email: Yup.string()
             .email("Invalid email")
             .required("Required"),
-        password: Yup.string().required("Password is Required")
+        password: Yup.string().required("Password is Required"),
+        confirm_password: Yup.string()
+            .oneOf([Yup.ref('password'), null], 'Passwords must match')
     }),
     validateOnBlur: false,
     validateOnChange: false,

@@ -5,4 +5,5 @@ export const LOGOUT = "LOGOUT";
 export const USER_LOADED = "USER_LOADED";
 export const AUTH_ERROR = "AUTH_ERROR";
 export const GET_PLANETS = "GET_PLANETS";
-export const TOGGLE_MODAL = "TOGGLE_MODAL";
+export const DISPLAY_MODAL = "DISPLAY_MODAL";
+export const CLOSE_MODAL = "CLOSE_MODAL";

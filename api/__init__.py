@@ -3,6 +3,7 @@
 # """
 
 from flask import Flask
+from flask_jwt_extended.jwt_manager import JWTManager
 from api.config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -10,6 +11,7 @@ from flask_marshmallow import Marshmallow
 
 db = SQLAlchemy()
 ma = Marshmallow()
+jwt = JWTManager()
 
 def create_app():
     
@@ -20,6 +22,8 @@ def create_app():
     db.init_app(app)
     
     ma.init_app(app)
+    
+    jwt.init_app(app)
     
     from api.models import User, Planet, Post
     

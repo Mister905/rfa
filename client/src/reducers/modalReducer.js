@@ -1,21 +1,37 @@
-import { TIME_LOADED } from "../actions/types";
+import { DISPLAY_MODAL, CLOSE_MODAL } from "../actions/types";
 
 const initialState = {
     display_modal: false,
+    modal_title: "",
+    modal_body: "",
+    modal_confirmation: "",
+    modal_decline: ""
 };
 
-// Use the initialState as a default value
 export default function appReducer(state = initialState, action) {
+
     const { type, payload } = action;
+
     switch (action.type) {
-        case TOGGLE_MODAL:
+        case DISPLAY_MODAL:
             return {
                 ...state,
-                display_modal: !state.display_modal
+                display_modal: true,
+                modal_title: payload.modal_title,
+                modal_body: payload.modal_body,
+                modal_confirmation: payload.modal_confirmation,
+                modal_decline: payload.modal_decline
+            };
+        case CLOSE_MODAL:
+            return {
+                ...state,
+                display_modal: false,
+                modal_title: "",
+                modal_body: "",
+                modal_confirmation: "",
+                modal_decline: ""
             };
         default:
-            // If this reducer doesn't recognize the action type, or doesn't
-            // care about this specific action, return the existing state unchanged
             return state;
     }
 }

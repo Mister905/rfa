@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react'
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { compose } from "redux";
@@ -10,22 +10,28 @@ import Planets from "./components/planets/Planets";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+
+  render() {
+    const { display_modal } = this.props.modal;
+    return (
+      <div className="App">
         <Header />
-        <Modal />
+        {display_modal &&
+          <Modal />
+        }
         <Switch>
           <Route exact path="/" component={Planets} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
         </Switch>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-  display_modal: state.display_modal
+  modal: state.modal
 });
 
 export default compose(connect(mapStateToProps, null), withRouter)(App);

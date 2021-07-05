@@ -1,21 +1,25 @@
-import { TOGGLE_MODAL  } from "./types";
+import { DISPLAY_MODAL, CLOSE_MODAL } from "./types";
 import axios from "axios";
 
-export const toggle_modal = () => async dispatch => {
+export const display_modal = (modal_title, modal_body, modal_confirmation, modal_decline) => async dispatch => {
 
     try {
-        // const res = await axios.get("/api/planets");
-        
-        // console.log(res.data);
-        // dispatch({
-        //     type: LOGIN_USER,
-        //     payload: res.data
-        // });
-        // history.push("/");
-        // dispatch(create_alert("success", "Welcome Back"));
-        console.log("TOGGLE");
+        dispatch({
+            type: DISPLAY_MODAL,
+            payload: { modal_title, modal_body, modal_confirmation, modal_decline }
+        });
     } catch (error) {
         console.log(error);
-        // dispatch(create_alert("error", "Login Error"));
+    }
+};
+
+export const close_modal = () => async dispatch => {
+
+    try {
+        dispatch({
+            type: CLOSE_MODAL
+        });
+    } catch (error) {
+        console.log(error);
     }
 };
